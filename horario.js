@@ -5,6 +5,7 @@ var server = "https://kity-linuxero.github.io/rrhhHorario/",
 function _Horario() {
     $.getScript("http://momentjs.com/downloads/moment-with-locales.min.js", function() {
         moment.locale("es");
+        getDomObjectAndPrint();
         var a = obtenerHorario(348e5),
             e = 0; //Corrección
         calcular(a, e), $("select").on("change", function() {
@@ -45,6 +46,13 @@ function _Horario() {
             })
         })
     })
+}
+
+//Funcion para testear la obtencion de un nodo de dom 
+function getDomObjectAndPrint(){
+    var n = $("header-nombre-usuario > div.col s12")[0],
+    console.log(n);
+    return true;
 }
 
 function _Asistencia() {
